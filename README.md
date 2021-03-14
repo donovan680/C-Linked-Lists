@@ -5,12 +5,22 @@ A linked list consists of various nodes, and each node contains two things: One 
 In a SLL, we have a single pointer that’ll point to the next node and, therefore, it is called a singly linked list. In a DLL, we have two pointers: One pointer will point to the next node, and another will point to the previous node. That’s why we call it a doubly linked list.
 In C programming, we use structures to create a linked list. The structure is a data type inside which we can define variables with different data types (e.g., int, char, pointer, etc.).
 For creating a linked list, we’ll define the structure of our linked list (using the struct data type), which will represent what a single node in a linked list will look like. And then we’ll actually create a linked list by assigning memory to use using the malloc() function.
-Structure of a linked list:
+Structure of a linked list:   
 
-The above code represents the structure for our linked list which contains two things. First is a variable, data, which will hold the integer value inside it. And the second is struct node *p, which is a pointer that’ll point to the next node in a linked list. Here, struct represents the structure data type, and node is the name of that structure. You can give whatever name you want to the structure.
+struct node
+{
+    int data;
+    struct node *p;
+};
+
+The above code represents the structure for our linked list which contains two things. 
+First is a variable, data, which will hold the integer value inside it. 
+And the second is struct node *p, which is a pointer that’ll point to the next node in a linked list. Here, struct represents the structure data type, and node is the name of that structure. You can give whatever name you want to the structure.
 Now, you may be having a question: Why does the pointer have the same data type as the structure? The reason behind this is the nodes in a linked list are self-referential, which simply means the pointer in a node will point to another node of the same type (in this case, the struct node).
 Note that after writing the above code, the linked list won’t be created — nor will any memory be assigned to it. It’s just a template that’ll define the structure of our linked list (how our linked list will look like).
 Now, let’s write a code to create a linked list by assigning it some memory using the malloc() function.
+       
+       struct node *new = (struct node *) malloc(sizeof(struct node));
 
 The above line of code will create a node in memory followed by a pointer called new, which will be pointing to the newly created node.
 Previously, while creating a template for our node, we have given its name as a struct node. Thus, to allocate the memory, first we have to find out the size of that data type and then pass it to the malloc function to allocate memory for it.
