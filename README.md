@@ -13,6 +13,8 @@ struct node
     struct node *p;
 };
 
+<img src="Linked-Lists/A single node in a linked list.png"  />
+
 The above code represents the structure for our linked list which contains two things. 
 First is a variable, data, which will hold the integer value inside it. 
 And the second is struct node *p, which is a pointer that’ll point to the next node in a linked list. Here, struct represents the structure data type, and node is the name of that structure. You can give whatever name you want to the structure.
